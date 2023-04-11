@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_save_data.py --config=params.yaml
+    deps:
+    - path: data_given/tips.csv
+      md5: 8dc78988a023d0345c3ba76a876877e3
+      size: 8223
+    - path: src/get_data.py
+      md5: 3196c27e2b34e4050e5346b0decb6a22
+      size: 606
+    - path: src/load_save_data.py
+      md5: 61b82cbc74ac5958328a79f780e6956a
+      size: 950
+    outs:
+    - path: data/raw/tips.csv
+      md5: 8a9d8f94f4d14d33b97f9ea3fde34d30
+      size: 8403

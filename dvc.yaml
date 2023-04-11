@@ -1,0 +1,10 @@
+stages:
+  load_data:
+    cmd: python src/load_save_data.py --config=params.yaml
+    deps:
+    - src/get_data.py
+    - src/load_save_data.py
+    - data_given/tips.csv
+    outs:
+    - data/raw/tips.csv
+

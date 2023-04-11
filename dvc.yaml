@@ -7,4 +7,7 @@ stages:
     - data_given/tips.csv
     outs:
     - data/raw/tips.csv
+    - data/processed/train_tips.csv
+    - data/processed/test_tips.csv
+
 

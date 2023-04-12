@@ -10,9 +10,25 @@ stages:
       md5: 3196c27e2b34e4050e5346b0decb6a22
       size: 606
     - path: src/load_save_data.py
-      md5: 61b82cbc74ac5958328a79f780e6956a
-      size: 950
+      md5: 101052e34c0cc74330de04315ef1c177
+      size: 523
     outs:
     - path: data/raw/tips.csv
       md5: 8a9d8f94f4d14d33b97f9ea3fde34d30
       size: 8403
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/tips.csv
+      md5: 8a9d8f94f4d14d33b97f9ea3fde34d30
+      size: 8403
+    - path: src/split_data.py
+      md5: 6e1475acbd2a64dff40340ab51828542
+      size: 967
+    outs:
+    - path: data/processed/test_tips.csv
+      md5: 521c6341a992689108a628a11cf45c30
+      size: 1698
+    - path: data/processed/train_tips.csv
+      md5: d5a293f11c9272e53a149ac22aeb17b2
+      size: 6746
